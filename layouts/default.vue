@@ -1,32 +1,43 @@
 <script setup lang="ts">
+definePageMeta({
+  middleware: 'auth'
+})
+
 const links = [{
   label: 'Home',
   icon: 'i-heroicons-home',
   url: '/'
-}, {
-  label: 'Inbox',
-  icon: 'i-heroicons-inbox',
-  badge: '4',
-  url: '/'
-}, {
-  label: 'Users',
-  icon: 'i-heroicons-user-group',
-  url: '/'
-}, {
-  label: 'Settings',
-  icon: 'i-heroicons-cog-8-tooth',
-  children: [{
-    label: 'General'
+},
+  {
+    label: 'Inbox',
+    icon: 'i-heroicons-inbox',
+    badge: {
+      title: 3,
+      color: 'orange'
+    },
+    url: '/'
   }, {
-    label: 'Members'
+    label: 'Users',
+    icon: 'i-heroicons-user-group-solid',
+    url: '/'
   }, {
-    label: 'Notifications'
+    label: 'Settings',
+    icon: 'i-heroicons-cog-8-tooth',
+    badge: {
+      title: 3,
+      color: 'blue'
+    },
+    children: [{
+      label: 'General'
+    }, {
+      label: 'Members'
+    }, {
+      label: 'Notifications'
+    }]
   }]
-}]
 </script>
 
 <template>
-
 
   <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button"
           class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
