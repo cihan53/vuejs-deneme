@@ -1,75 +1,41 @@
-# Nuxt 3 Minimal Starter
+# yapılacak işlemleri
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
+ilk sayfa yüklenirken bazı istekler yapılmalı
+* dil bilgisi /language
+* sabitler /const /errorcode
+* csrf token istenmeli /getcsrftoken
 
-Make sure to install the dependencies:
+## linsans kontrolu
+    * lisans kontrolu yapılmalı /check-licence
+    
+## lisans kontrolu başarılı ise login sayfasına yönlendirilmeli.
+    * hatalı lisans işleminde sayfa uyarı verip sabit kalmalı.
 
-```bash
-# npm
-npm install
+## Login sayfası çıkmalı
+    * login işlemi pina store yardımı ile yapılacak
+    * başarılı girişte token pina store ile saklanmalı
+    * kullanıcı profil bilgisi için /me isteği atılmalı
 
-# pnpm
-pnpm install
+## başarılı login işleminden sonra
+    * kullanıcıya göre layout yüklenmeli
+    * Sabit düzenler yüklenmeli  /dashboard/default
+    * home page düzeni istenmeli /dashboard/home
 
-# yarn
-yarn install
+## sol menu düzeni
+    * kullanıcı izinlerine göre sol menü düzenlenmeli.
+## ust menü 
+    * kullanıcı yetkilerine göre düzenlenemeli
 
-# bun
-bun install
-```
+## dasboard düzenleme
+    * her sayfa layoutGrid desteği ile düzenlenebilmeli.
+    * düzen kullanıcı bazlı saklanmalı /dashboad/custome/save
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+# sistem genelinde kullanılacak fonksiyonlar
+ * isAuthanticate
+ * isCan
+ * isLang
+ * changeLang
+ * tokenRefresh
+ * login
+ * logout
