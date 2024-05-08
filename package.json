@@ -11,13 +11,18 @@
     "clear": "nuxt cleanup",
     "clear-npx-cache": "npx clear-npx-cache"
   },
+  "resolutions": {
+    "string-width": "4.2.3"
+  },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxt/ui": "^2.13.0",
-    "nuxt": "^3.10.1",
-    "nuxt-auth-utils": "^0.0.24"
+    "@nuxt/types": "^2.17.3",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
+    "@nuxt/ui": "^2.13.0",
+    "@pinia/nuxt": "^0.5.1",
+    "nuxt": "^3.10.1",
     "nuxt-permissions": "^0.2.4"
   }
 }

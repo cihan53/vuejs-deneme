@@ -3,7 +3,8 @@ definePageMeta({
   middleware: 'auth'
 })
 
-const links = [{
+const links = [
+  {
   label: 'Home',
   icon: 'i-heroicons-home',
   url: '/'
@@ -16,11 +17,13 @@ const links = [{
       color: 'orange'
     },
     url: '/'
-  }, {
+  },
+  {
     label: 'Users',
     icon: 'i-heroicons-user-group-solid',
     url: '/'
-  }, {
+  },
+  {
     label: 'Settings',
     icon: 'i-heroicons-cog-8-tooth',
     badge: {
