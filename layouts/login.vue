@@ -3,10 +3,7 @@
 </script>
 
 <template>
-  <div>
-    <p>Login Layout</p>
     <slot />
-  </div>
 </template>
 
 <style scoped>

@@ -5,39 +5,47 @@ definePageMeta({
 
 const links = [
   {
-  label: 'Home',
-  icon: 'i-heroicons-home',
-  url: '/'
-},
-  {
-    label: 'Inbox',
-    icon: 'i-heroicons-inbox',
-    badge: {
-      title: 3,
-      color: 'orange'
-    },
+    label: 'Dashboard',
+    icon: 'i-material-symbols-dashboard-outline',
     url: '/'
   },
   {
-    label: 'Users',
-    icon: 'i-heroicons-user-group-solid',
-    url: '/'
-  },
-  {
-    label: 'Settings',
+    label: 'Organization',
     icon: 'i-heroicons-cog-8-tooth',
     badge: {
       title: 3,
       color: 'blue'
     },
     children: [{
-      label: 'General'
+      label: 'Organization',
+      url: '/organization'
     }, {
-      label: 'Members'
+      label: 'Teams',
+      url: '/teams'
     }, {
-      label: 'Notifications'
+      label: 'Profiles',
+      url: '/profiles'
     }]
-  }]
+  },
+  {
+    label: 'Analytics',
+    icon: 'i-heroicons-user-group-solid',
+    url: '/analytics'
+  },
+  {
+    label: 'Agile Space',
+    icon: 'i-heroicons-user-group-solid',
+    url: '/agile-space'
+  },
+
+  {
+    label: 'Gamification',
+    icon: 'i-heroicons-user-group-solid',
+    url: '/me'
+  },
+
+
+]
 </script>
 
 <template>
@@ -54,21 +62,20 @@ const links = [
   <aside id="logo-sidebar"
          class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
          aria-label="Sidebar">
-    <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-      <a href="https://flowbite.com/" class="flex items-center ps-2.5 mb-5">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-7" alt="Flowbite Logo"/>
-        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-      </a>
+    <div class="h-full px-3 py-4 overflow-y-auto bg-white ">
+      <NuxtLink to="/" class="flex items-center ps-2.5 mb-5">
+        <img src="~/assets/image/logo.png" class="h-6 me-3 sm:h-7" alt="Oobeya"/>
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Oobeya</span>
+      </NuxtLink>
       <SidebarLinks :links="links"/>
     </div>
   </aside>
 
   <div class="p-4 sm:ml-64">
-    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+    <div class="p-4">
       <slot/>
     </div>
   </div>
-
 </template>
 
 <style scoped>

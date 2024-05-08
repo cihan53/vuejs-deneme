@@ -3,15 +3,23 @@ interface UserPayloadInterface {
     password: string;
 }
 
+interface LoginResponseInterface {
+    token:{
+        accessToken: string;
+        refreshToken: number;
+    }
+}
 export const useAuthStore = defineStore('websiteStore', {
     state: () => ({
         authenticated: false,
         loading: false,
-        me: null
+        me: {}
     }),
     actions: {
-        async authenticateUser({username, password}: UserPayloadInterface) {
-            const {data, pending} = await $fetch('https://api.nuxt.com/modules/pinia',
+        authenticateUser: async function ({username, password}: UserPayloadInterface) {
+            const config = useRuntimeConfig()
+            this.loading = true;
+            const response: LoginResponseInterface = await $fetch(`${config.public.apiBase}/authenticate`,
                 {
                     method: 'post',
                     headers: {'Content-Type': 'application/json'},
@@ -21,18 +29,18 @@ export const useAuthStore = defineStore('websiteStore', {
                     }
                 }
             )
-            this.loading = "pending";
-            if (data.value) {
+            this.loading = false;
+            if (response.token) {
                 const token = useCookie('token'); // useCookie new hook in nuxt 3
-                token.value = data?.value?.token; // set token to cookie
+                token.value = response?.token?.accessToken; // set token to cookie
                 this.authenticated = true; // set authenticated  state value to true
-                this.me = data?.value
+                this.me = response.token
             }
         },
         logUserOut() {
             const token = useCookie('token'); // useCookie new hook in nuxt 3
             this.authenticated = false; // set authenticated  state value to false
-            this.me = null;
+            this.me = {};
             token.value = null; // clear the token cookie
         },
     }

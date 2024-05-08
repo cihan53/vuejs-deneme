@@ -3,7 +3,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const srcDir = __dirname;
 
 export default {
-  darkMode: 'selector',
+  // darkMode: 'selector',
+  darkMode: 'false',
   content: [
     `${srcDir}/components/**/*.{vue,js,ts}`,
     `${srcDir}/layouts/**/*.vue`,
