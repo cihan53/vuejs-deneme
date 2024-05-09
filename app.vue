@@ -10,6 +10,8 @@ if (isAuthenticated.value) {
 </script>
 
 <template>
+  <NuxtRouteAnnouncer />
+  <NuxtLoadingIndicator />
   <NuxtLayout :name="layout">
     <NuxtPage/>
   </NuxtLayout>

@@ -1,12 +1,12 @@
 # yapılacak işlemleri
 
-
 ilk sayfa yüklenirken bazı istekler yapılmalı
 * dil bilgisi /language
-* sabitler /const /errorcode
+* sabitler /const 
+* hata kodları /errorcode
 * csrf token istenmeli /getcsrftoken
 
-## linsans kontrolu
+## lisans kontrolu
     * lisans kontrolu yapılmalı /check-licence
     
 ## lisans kontrolu başarılı ise login sayfasına yönlendirilmeli.
@@ -39,3 +39,18 @@ ilk sayfa yüklenirken bazı istekler yapılmalı
  * tokenRefresh
  * login
  * logout
+
+
+```mermaid
+flowchart TD
+    A[Sayfaya giriş] --> B(Sabitler ve hata kodlarını yükle)
+    B --> C{Lisans kontrolu yap}
+    C -->|Lisans girilmemiş| D[/Lisans giriş ekranı/]
+    C -->|Lisans kayıtlı veya kontrol başarılı | E[/Kullanıcı giriş ekranı/]
+    D --> |Bilgileri kontrol et| C
+    E --> G{Giriş kontrolu}
+    G --> |hata mesajı göster| E
+    G --> F[Kullanıcı bilgilerini al\nYetkilerini al]
+    F --> H([Ana sayfa])
+
+```
