@@ -3,10 +3,11 @@ import {useAuthStore} from '~/store/auth'; // import the auth store we just crea
 
 export function useAuth() {
 
-    const {authenticateUser} = useAuthStore();
-    const {authenticated,me} = storeToRefs(useAuthStore());
+    const {authenticateUser,loading} = useAuthStore();
+    const {authenticated,my} = storeToRefs(useAuthStore());
     return {
+        loading,
         isAuthenticated: authenticated,
-        me
+        my
     }
 }

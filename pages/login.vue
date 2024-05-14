@@ -11,14 +11,14 @@ const user = ref({
   password: '0lelplR',
 });
 
-const router = useRouter();
+// const router = useRouter();
 const {isAuthenticated} = useAuth()
-const {authenticateUser} = useAuthStore();
+const authStore = useAuthStore()
 
 const login = async () => {
-  await authenticateUser(user.value);
+  await authStore.authenticateUser(user.value);
   if (isAuthenticated) {
-    await router.push('/');
+    window.location.href = "/"
   }
 };
 

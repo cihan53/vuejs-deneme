@@ -8,7 +8,12 @@ export default defineEventHandler(async (event) => {
         email: 'alice@example.com',
         department: 'Engineering',
         birthdate: '1975-12-31',
-        picture: 'https://github.com/nuxt.png'
+        picture: 'https://github.com/nuxt.png',
+        permissions:[
+            'show-organization-menu',
+            'show-analytics-menu',
+            'show-me-menu',
+        ]
     }
     return user
 })

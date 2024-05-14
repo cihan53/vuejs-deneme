@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         public: {
-            apiBase: process.env.API_BASE_URL || '/api'
+            apiBase: process.env.API_BASE_URL || '/api',
         }
     },
     modules: ['nuxt-permissions', "@nuxt/ui", "@pinia/nuxt"],

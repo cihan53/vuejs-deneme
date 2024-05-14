@@ -18,13 +18,13 @@
     "@nuxt/devtools": "latest",
     "@nuxt/types": "^2.17.3",
     "@types/jsonwebtoken": "^9.0.6",
-    "jsonwebtoken": "^9.0.2",
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.13.0",
+    "@nuxt/ui": "^2.16.0",
     "@pinia/nuxt": "^0.5.1",
-    "nuxt": "^3.10.1",
+    "nuxt": "^3.11.2",
+    "jsonwebtoken": "^9.0.2",
     "nuxt-permissions": "^0.2.4"
   }
 }

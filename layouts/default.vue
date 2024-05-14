@@ -12,6 +12,7 @@ const links = [
   {
     label: 'Organization',
     icon: 'i-heroicons-cog-8-tooth',
+    permissions: ['show-organization-menu'],
     badge: {
       title: 3,
       color: 'blue'
@@ -30,18 +31,21 @@ const links = [
   {
     label: 'Analytics',
     icon: 'i-heroicons-user-group-solid',
-    url: '/analytics'
+    url: '/analytics',
+    permissions: ['show-analytics-menu'],
   },
   {
     label: 'Agile Space',
     icon: 'i-heroicons-user-group-solid',
-    url: '/agile-space'
+    url: '/agile-space',
+    permissions: ['show-agile-space-menu'],
   },
 
   {
     label: 'Gamification',
     icon: 'i-heroicons-user-group-solid',
-    url: '/me'
+    url: '/me',
+    permissions: ['show-me-menu'],
   },
 
 

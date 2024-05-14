@@ -32,6 +32,9 @@ export default defineEventHandler(async (event) => {
         }
     )
 
+    /**
+     *
+     */
     refreshTokens[refreshToken] = {
         accessToken,
         user: {
